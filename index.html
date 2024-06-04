@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locker🪄</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="all">
+        <div class="top-side"></div>
+        <div class="left-side"></div>
+        <div class="main">
+          <div class="main-area">
+            <div class="slider">
+              <div class="i-love-you">
+                <div id="new-message">
+                  <div id="say-love">
+                    <h2>100th Day❤️</h2>
+                    <p>Hey Aishu🧚🏻,<br> today marks our 100th day of talking😇,<br> and I just wanted to express how much joy and fulfillment you've brought into my life during this time🤗,<br> From discussing the happiest moments to supporting each other through tough times🫂, <br>every conversation with you has been a treasure🪄,<br> Here's to many more days filled with love, laughter, deep talks, and endless connection✨, Looking forward to continuing this beautiful journey with you until my very last breath❤️,</p>
+                  </div>
+                  </div>
+              </div>
+              <div class="thif">
+                <div class="lock-outside">
+                  <div class="lock">
+                    <div class="lock-inside"></div>
+                  </div>
+                </div>
+                <div class="pin-put">
+                  <div class="pin"></div>
+                  <div class="buttons-area">
+                    <div class="button" id="one">1</div>
+                    <div class="button" id="two">2</div>
+                    <div class="button" id="three">3</div>
+                    <div class="button" id="four">4</div>
+                    <div class="button" id="five">5</div>
+                    <div class="button" id="six">6</div>
+                    <div class="button" id="seven">7</div>
+                    <div class="button" id="eight">8</div>
+                    <div class="button" id="nine">9</div>
+                    <div class="button"id="back">
+                      <img src="https://cdn1.iconfinder.com/data/icons/material-core/16/refresh-512.png" alt="">
+                    </div>
+                    <div class="button"id="zero">0</div>
+                    <div class="button" id="go">
+                      <img src="https://cdn1.iconfinder.com/data/icons/random-crafticons/48/misc-_start_-512.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+<script>
+const audio=new Audio();
+audio.src="sillunu_oru_kadhal.mp3";
+let pin = document.querySelector('.pin');
+let go = document.getElementById('go');
+
+
+let zero = document.getElementById('zero');
+let one = document.getElementById('one');
+let two = document.getElementById('two');
+let three = document.getElementById('three');
+let four = document.getElementById('four'); 
+let five = document.getElementById('five');
+let six = document.getElementById('six');
+let seven = document.getElementById('seven');
+let eight = document.getElementById('eight');
+let nine = document.getElementById('nine');
+
+function show (value) {
+  return () => { 
+    if (pin.innerHTML.length < 4) {
+      pin.insertAdjacentHTML('beforeend', value);
+    }
+  } 
+};
+
+zero.onclick = show (0);
+one.onclick = show (1);
+two.onclick = show (2);
+three.onclick = show (3);
+four.onclick = show (4);
+five.onclick = show (5);
+six.onclick = show (6);
+seven.onclick = show (7);
+eight.onclick = show (8);
+nine.onclick = show (9);
+
+function ection () {
+      return () => {
+        if (pin.innerHTML === '0143') {
+          let lock = document.querySelector('.lock-outside');
+            lock.style.transform = 'rotate(0)';
+            lock.style.transition = 'all ease 1s';
+            let thif = document.querySelector('.thif');
+            thif.style.marginLeft = '600px';
+            pin.style.background ='#5EBB63';
+            audio.play();
+           
+        } else {
+            pin.style.background ='red';
+        }
+      }
+    };
+go.onclick = ection();
+
+let back = document.getElementById('back');
+back.onclick = () => {
+  history.go(0);
+
+};
+
+let message = document.getElementById('love-message');
+message.onclick = ()=> {
+  message.style.opacity = '0';
+  message.style.transition = '3s all';
+};
+
+
+
+
+</script>
+</html>
